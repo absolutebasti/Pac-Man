@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAC-MAN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated background particles -->
+    <div class="particles"></div>
+
+    <div class="game-container" id="game-container">
+        <!-- CRT Scanlines Overlay -->
+        <div class="crt-overlay"></div>
+
+        <!-- Screen shake wrapper -->
+        <div class="shake-wrapper" id="shake-wrapper">
+            <div class="header">
+                <div class="score-section">
+                    <div class="label">1UP</div>
+                    <div id="score" class="value">00</div>
+                </div>
+                <div class="score-section">
+                    <div class="label">HIGH SCORE</div>
+                    <div id="high-score" class="value">00</div>
+                </div>
+            </div>
+
+            <div class="canvas-wrapper">
+                <canvas id="game-canvas" width="224" height="248"></canvas>
+                <div class="canvas-glow"></div>
+                <!-- Score popups container -->
+                <div id="score-popups" class="score-popups"></div>
+                <!-- Power pellet flash -->
+                <div id="power-flash" class="power-flash"></div>
+            </div>
+
+            <div class="footer">
+                <div id="lives" class="lives"></div>
+                <div id="fruit" class="fruit"></div>
+            </div>
+        </div>
+
+        <div id="start-screen" class="overlay">
+            <div class="title">PAC-MAN</div>
+            <div class="instructions">
+                <p>Use <span class="key">ARROW KEYS</span> to move</p>
+                <p>Eat all pellets to advance</p>
+                <p>Avoid the ghosts!</p>
+            </div>
+            <div class="prompt blink">PRESS SPACE TO START</div>
+        </div>
+
+        <div id="game-over-screen" class="overlay hidden">
+            <div class="game-over-text">GAME OVER</div>
+            <div class="final-score">SCORE: <span id="final-score">0</span></div>
+            <div class="prompt blink">PRESS SPACE TO RESTART</div>
+        </div>
+
+        <div id="ready-screen" class="overlay hidden">
+            <div class="ready-text">READY!</div>
+        </div>
+    </div>
+
+    <!-- Tech footer -->
+    <div class="tech-footer">
+        <span class="tech-text">Built with vanilla HTML • CSS • JavaScript</span>
+    </div>
+
+    <script type="module" src="js/game.js"></script>
+</body>
+
+</html>
